@@ -1,0 +1,261 @@
+{% extends 'students/layout.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <button 
+                type="button" 
+                class="btn btn-gradient-primary waves-effect waves-light float-right mb-3" 
+                data-toggle="modal" 
+                data-animation="bounce" 
+                data-target="#candidate-add-modal">
+                    + Əlavə Et
+                </button>
+                <h4 class="header-title mt-0 mb-3">Bütün Namizədlər</h4>
+                <div class="table-responsive dash-social">
+                    <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ad</th>
+                                                    <th>Soyad</th>
+                                                    <th>Email</th>
+                                                    <th>Telefon</th>
+                                                    <th>Qeyd Tarixi</th>
+                                                    <th>FIN</th>
+                                                    <th>Status</th>
+                                                    <th>Düzəliş</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Mahmud</td>
+                                                    <td>Qəribov</td>
+                                                    <td>mahmood@gmail.com</td>
+                                                    <td>+99505012345</td>
+                                                    <td>08/20/2020</td>
+                                                    <td>54AFC3E</td>
+                                                    <td><span class="badge badge-md badge-soft-success">Aktiv</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target="#candidate-edit-modal">                                                        
+                                                            <i class="fas fa-edit text-info font-16"></i>
+                                                        </a>
+                                                        <a href="#" id="sa-remove-warning">
+                                                            <i class="fas fa-trash-alt text-danger font-16"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Rübabə</td>
+                                                    <td>Şabanova</td>
+                                                    <td>ruby@gmail.com</td>
+                                                    <td>+99505012345</td>
+                                                    <td>08/20/2020</td>
+                                                    <td>74AFC3E</td>
+                                                    <td><span class="badge badge-md badge-soft-success">Aktiv</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target="#candidate-edit-modal">                                                        
+                                                            <i class="fas fa-edit text-info font-16"></i>
+                                                        </a>
+                                                        <a href="#" id="sa-remove-warning">
+                                                            <i class="fas fa-trash-alt text-danger font-16"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tərlan</td>
+                                                    <td>Soltanov</td>
+                                                    <td>soltanov@gmail.com</td>
+                                                    <td>+99505012345</td>
+                                                    <td>08/20/2020</td>
+                                                    <td>54AFC3E</td>
+                                                    <td><span class="badge badge-md badge-soft-success">Aktiv</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target="#candidate-edit-modal">                                                        
+                                                            <i class="fas fa-edit text-info font-16"></i>
+                                                        </a>
+                                                        <a href="#" id="sa-remove-warning">
+                                                            <i class="fas fa-trash-alt text-danger font-16"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ulvi</td>
+                                                    <td>Nəcəfli</td>
+                                                    <td>ulvipy@gmail.com</td>
+                                                    <td>+99505012345</td>
+                                                    <td>08/20/2020</td>
+                                                    <td>54AFC3E</td>
+                                                    <td><span class="badge badge-boxed  badge-soft-danger">Passiv</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" class="mr-2" data-toggle="modal" data-animation="bounce" data-target="#candidate-edit-modal">                                                        
+                                                            <i class="fas fa-edit text-info font-16"></i>
+                                                        </a>
+                                                        <a href="#" id="sa-remove-warning">
+                                                            <i class="fas fa-trash-alt text-danger font-16"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end card-body-->
+    </div>
+    <!--end card-->
+</div>
+
+{% endblock content %}
+
+{% block modals %}
+
+<div id="candidate-add-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Yenı namizəd əlavə et</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Ad</label>
+                                <input type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadEmail">Soyad</label>
+                                <input type="email" class="form-control" id="LeadEmail" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Email</label>
+                                <input type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>                      
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PhoneNo">Telefon nömrəsi</label>
+                                <input type="text" class="form-control" id="PhoneNo" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">                                   
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">Status</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">Select</option>
+                                    <option value="1">Aktiv</option>
+                                    <option value="2">Passiv</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Şəxsiyyət vəsiqəsinin FİN -i</label>
+                                <input type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>
+                    </div>                    
+                    <button type="button" class="btn btn-sm btn-primary">Əlavə et</button>
+                    <button type="button" class="btn btn-sm btn-danger">Əməliyyatı ləğv et</button>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div id="candidate-edit-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Namizədi redaktə et</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Ad</label>
+                                <input value="Mahmud" type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadEmail">Soyad</label>
+                                <input value="Qaribov" type="email" class="form-control" id="LeadEmail" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Email</label>
+                                <input value="mahmood@gmail.com" type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>                      
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PhoneNo">Telefon nömrəsi</label>
+                                <input value="+99505012345" type="text" class="form-control" id="PhoneNo" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">               
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">Status</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">Aktiv</option>
+                                    <option value="1">Aktiv</option>
+                                    <option value="2">Passiv</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Şəxsiyyət vəsiqəsinin FİN -i</label>
+                                <input value="71eraj6" type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>
+                    </div>                    
+                    <button type="button" class="btn btn-sm btn-primary">Yadda saxla</button>
+                    <button type="button" class="btn btn-sm btn-danger">Əməliyyatı ləğv et</button>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+{% endblock modals %}

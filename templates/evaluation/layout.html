@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pragmatech</title>
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Site icon in Tab -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon.ico') }}">
+
+    <!-- DataTables -->
+    <link href="{{ url_for('static', filename='plugins/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='plugins/datatables/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="{{ url_for('static', filename='plugins/datatables/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!-- 3rd Party css -->
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='assets/css/jquery-ui.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='assets/css/metisMenu.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!-- My css -->
+    <link href="{{ url_for('static', filename='assets/css/app.css') }}" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <!-- Leftbar Tab Menu -->
+    <div class="leftbar-tab-menu">
+        <!-- Main Icon Menu -->
+        <div class="main-icon-menu">
+            <!-- Leftbar Logo -->
+            <a href="/candidates" class="logo logo-metrica d-block text-center">
+                <span>
+                        <img src="{{ url_for('static', filename='assets/images/logo-sm.png' ) }}" alt="logo-small" class="logo-sm">
+                    </span>
+            </a>
+            <!-- Leftbar Navbar -->
+            <nav class="nav">
+                <!-- Students -->
+                <a href="#Students" class="nav-link" data-toggle="tooltip-custom" data-placement="right" title="" data-original-title="Tələbələr" data-trigger="hover">
+                    <i data-feather="users" class="align-self-center menu-icon icon-dual"></i>
+                </a>
+                <!-- end Students -->
+
+                <!-- Payments -->
+                <a href="#Payments" class="nav-link" data-toggle="tooltip-custom" data-placement="right" title="" data-original-title="Ödəmələr" data-trigger="hover">
+                    <i data-feather="credit-card" class="align-self-center menu-icon icon-dual"></i>
+                </a>
+                <!-- end Payments -->
+
+                <!-- Evaluation -->
+                <a href="#Evaluation" class="nav-link active" data-toggle="tooltip-custom" data-placement="right" title="" data-original-title="Qiymətləndirmə" data-trigger="hover">
+                    <i data-feather="book-open" class="align-self-center menu-icon icon-dual"></i>
+                </a>
+                <!-- end Evaluation -->
+            </nav>
+            <!-- end Left Navbar-->
+        </div>
+        <!-- end Main Icon Menu -->
+
+        <!-- Main Menu Inner -->
+        <div class="main-menu-inner">
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="/candidates" class="logo">
+                    <span>
+                            <img src="{{url_for('static', filename='assets/images/logo-dark.png')}}" alt="logo-large" class="logo-lg logo-dark">
+                            <img src="{{url_for('static', filename='assets/images/logo.png')}}" alt="logo-large" class="logo-lg logo-light">
+                        </span>
+                </a>
+            </div>
+            <!-- end Logo -->
+
+            <!-- Menu Body -->
+            <div class="menu-body slimscroll">
+                <!-- Students -->
+                <div id="Students" class="main-icon-menu-pane">
+                    <div class="title-box">
+                        <h6 class="menu-title">Tələbələr</h6>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link" href="/candidates">Namizədlər</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/students">Tələbələr</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/left">Ləğv edənlər</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/canceled">Ləğv olunanlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/graduates">Məzunlar</a></li>
+                    </ul>
+                </div>
+                <!-- end Students -->
+
+                <!-- Payments -->
+                <div id="Payments" class="main-icon-menu-pane">
+                    <div class="title-box">
+                        <h6 class="menu-title">Ödəmələr</h6>
+                    </div>
+                    <ul class="nav metismenu">
+                        <li class="nav-item"><a class="nav-link" href="/all_payments">Bütün Ödəmələr</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/active_payments">Aktiv Ödəmələr</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/monthly_payments">Aylıq Ödəmələr</a></li>
+                    </ul>
+                </div>
+                <!-- end Payments -->
+
+                <!-- Evaluation -->
+                <div id="Evaluation" class="main-icon-menu-pane active">
+                    <div class="title-box">
+                        <h6 class="menu-title">Qiymətləndirmə</h6>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/students_evaluation">Tələbələr</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end Education -->
+            </div>
+            <!--end Menu Body -->
+        </div>
+        <!-- end Main Menu Inner-->
+    </div>
+    <!-- end Leftbar Tab Menu-->
+
+    <!-- Top Bar Start -->
+    <div class="topbar">
+        <!-- Navbar -->
+        <nav class="navbar-custom">
+            <ul class="list-unstyled topbar-nav float-right mb-0">
+                <!-- Notifications -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="ti-bell noti-icon"></i>
+                        <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
+
+                        <h6 class="dropdown-item-text font-15 m-0 py-3 bg-primary text-white d-flex justify-content-between align-items-center">
+                            Notifications <span class="badge badge-light badge-pill">2</span>
+                        </h6>
+                        <div class="slimscroll notification-list">
+                            <!-- item-->
+                            <a href="#" class="dropdown-item py-3">
+                                <small class="float-right text-muted pl-2">2 min ago</small>
+                                <div class="media">
+                                    <div class="avatar-md bg-primary">
+                                        <i class="la la-cart-arrow-down text-white"></i>
+                                    </div>
+                                    <div class="media-body align-self-center ml-2 text-truncate">
+                                        <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
+                                        <small class="text-muted mb-0">Dummy text of the printing and industry.</small>
+                                    </div>
+                                    <!--end media-body-->
+                                </div>
+                                <!--end media-->
+                            </a>
+                            <!--end-item-->
+                            <!-- item-->
+                            <a href="#" class="dropdown-item py-3">
+                                <small class="float-right text-muted pl-2">10 min ago</small>
+                                <div class="media">
+                                    <div class="avatar-md bg-success">
+                                        <i class="la la-group text-white"></i>
+                                    </div>
+                                    <div class="media-body align-self-center ml-2 text-truncate">
+                                        <h6 class="my-0 font-weight-normal text-dark">Meeting with designers</h6>
+                                        <small class="text-muted mb-0">It is a long established fact that a reader.</small>
+                                    </div>
+                                    <!--end media-body-->
+                                </div>
+                                <!--end media-->
+                            </a>
+                            <!--end-item-->
+                            <!-- item-->
+                            <a href="#" class="dropdown-item py-3">
+                                <small class="float-right text-muted pl-2">40 min ago</small>
+                                <div class="media">
+                                    <div class="avatar-md bg-pink">
+                                        <i class="la la-list-alt text-white"></i>
+                                    </div>
+                                    <div class="media-body align-self-center ml-2 text-truncate">
+                                        <h6 class="my-0 font-weight-normal text-dark">UX 3 Task complete.</h6>
+                                        <small class="text-muted mb-0">Dummy text of the printing.</small>
+                                    </div>
+                                    <!--end media-body-->
+                                </div>
+                                <!--end media-->
+                            </a>
+                            <!--end-item-->
+                            <!-- item-->
+                            <a href="#" class="dropdown-item py-3">
+                                <small class="float-right text-muted pl-2">1 hr ago</small>
+                                <div class="media">
+                                    <div class="avatar-md bg-warning">
+                                        <i class="la la-truck text-white"></i>
+                                    </div>
+                                    <div class="media-body align-self-center ml-2 text-truncate">
+                                        <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
+                                        <small class="text-muted mb-0">It is a long established fact that a reader.</small>
+                                    </div>
+                                    <!--end media-body-->
+                                </div>
+                                <!--end media-->
+                            </a>
+                            <!--end-item-->
+                            <!-- item-->
+                            <a href="#" class="dropdown-item py-3">
+                                <small class="float-right text-muted pl-2">2 hrs ago</small>
+                                <div class="media">
+                                    <div class="avatar-md bg-info">
+                                        <i class="la la-check-circle text-white"></i>
+                                    </div>
+                                    <div class="media-body align-self-center ml-2 text-truncate">
+                                        <h6 class="my-0 font-weight-normal text-dark">Payment Successfull</h6>
+                                        <small class="text-muted mb-0">Dummy text of the printing.</small>
+                                    </div>
+                                    <!--end media-body-->
+                                </div>
+                                <!--end media-->
+                            </a>
+                            <!--end-item-->
+                        </div>
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                                View all <i class="fi-arrow-right"></i>
+                            </a>
+                    </div>
+                </li>
+                <!-- end Notifications -->
+
+                <!-- Profile -->
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="{{url_for('static', filename='assets/images/users/user-4.jpg')}}" alt="profile-user" class="rounded-circle" />
+                        <span class="ml-1 nav-user-name hidden-sm">Amelia <i class="mdi mdi-chevron-down"></i> </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="dripicons-user text-muted mr-2"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-wallet text-muted mr-2"></i> My Wallet</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+                    </div>
+                </li>
+                <!-- end Profile -->
+            </ul>
+            <!--end Topbar Nav-->
+
+
+            <ul class="list-unstyled topbar-nav mb-0">
+                <!-- Burger Button -->
+                <li>
+                    <button class="button-menu-mobile nav-link">
+                            <i data-feather="menu" class="align-self-center"></i>
+                        </button>
+                </li>
+
+                <!-- Search -->
+                <li class="hide-phone app-search">
+                    <form role="search" class="">
+                        <input type="text" id="AllCompo" placeholder="Search..." class="form-control">
+                        <a href=""><i class="fas fa-search"></i></a>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+        <!-- End Navbar-->
+    </div>
+    <!-- Top Bar End -->
+
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <div class="page-content-tab">
+            <div class="container-fluid">
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="float-right">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Pragmatech</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Qiymətləndirmə</a></li>
+                                    <li class="breadcrumb-item active">{{ title }}</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">{{ title }}</h4>
+                        </div>
+                        <!--end page-title-box-->
+                    </div>
+                    <!--end col-->
+                </div>
+                <!-- end page title end breadcrumb -->
+            </div>
+            <!-- Content -->
+            {% block content %} {% endblock content %}
+            <!--  Modal content for the above -->
+            {% block modals %} {% endblock modals %}
+            <footer class="footer text-center text-sm-left">
+                &copy; Pragmatech <span class="text-muted d-none d-sm-inline-block float-right">Crafted by Boosters</span>
+            </footer>
+            <!--end footer-->
+        </div>
+        <!-- end page content -->
+    </div>
+    <!-- end page-wrapper -->
+
+    <!-- jQuery  -->
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/metismenu.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/waves.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/feather.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/apexcharts/apexcharts.min.js') }}"></script>
+
+    <!-- Required datatable js -->
+    <script src="{{ url_for('static', filename='plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <!-- Buttons examples -->
+    <script src="{{ url_for('static', filename='plugins/datatables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables/jszip.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables/pdfmake.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables/vfs_fonts.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables/buttons.html5.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables/buttons.print.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables/buttons.colVis.min.js') }}"></script>
+    <!-- Responsive examples -->
+    <script src="{{ url_for('static', filename='plugins/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/pages/jquery.datatable.init.js') }}"></script>
+
+
+    <!-- App js -->
+    <script src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
+
+</body>
+
+</html>

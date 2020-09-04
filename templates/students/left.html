@@ -1,0 +1,234 @@
+{% extends 'students/layout.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+        <div class="card-body">
+            <button
+            type="button"
+            class="btn btn-gradient-primary waves-effect waves-light float-right mb-3"
+            data-toggle="modal"
+            data-animation="bounce"
+            data-target="#add-left-student-modal"
+            >
+            + Əlavə et
+            </button>
+            <h4 class="header-title mt-0 mb-3">Ləğv edənlər</h4>
+            <div class="table-responsive dash-social">
+            <table
+                id="left_datatable"
+                class="table table-bordered dt-responsive nowrap"
+                style="
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                "
+            >
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                    <th>Qeydiyyat Tarixi</th>
+                    <th>Ləğv etmə Tarixi</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th></th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                    <th>Qeydiyyat Tarixi</th>
+                    <th>Ləğv etmə Tarixi</th>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+
+{% endblock content %}
+
+{% block modals %}
+
+<div id="add-left-student-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Uzaqlaşmış tələbəni əlavə et</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row  justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">Tələbəni seç</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">Seç:</option>
+                                    <option value="1">Mahmud Qəribov Elçin</option>
+                                    <option value="1">Terlan Soltanov Laçın</option>
+                                    <option value="2">Rübabe Sabanova .....</option>
+                                    <option value="2">Ülvi Nəcəfli Tarix</option>
+                                    <option value="2">Qədir Məmmdli Ülvi</option>
+                                    <option value="2">Pərviz Abdullayev Yelpənək</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Ad (T.g)</label>
+                                <input disabled type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>                      
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PhoneNo">Soyad (T.g)</label>
+                                <input disabled type="text" class="form-control" id="PhoneNo" required="">
+                            </div>
+                        </div>                        
+                    </div>  
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Email (T.g)</label>
+                                <input disabled type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>                      
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PhoneNo">Telefon nömrəsi (T.g)</label>
+                                <input disabled type="text" class="form-control" id="PhoneNo" required="">
+                            </div>
+                        </div>                        
+                    </div>    
+                    <div class="row  justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PhoneNo">Qeydiyyat Tarixi (T.g)</label>
+                                <input disabled type="text" class="form-control" id="PhoneNo" required="">
+                            </div>
+                        </div>                         
+                    </div>      
+                    <div class="row  justify-content-center">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label for="LeadEmail">Tələbənin çıxma detallarını qeyd et :</label>
+                                <textarea  class="form-control" rows="2" >
+                                </textarea>
+                            </div>
+                        </div>                       
+                    </div>            
+                    <button type="button" class="btn btn-sm btn-primary">Əlavə et</button>
+                    <button type="button" class="btn btn-sm btn-danger">Əməliyyatı ləğv et</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="edit-left-student-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Çıxan şəxsin detallarını redaktə et</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="LeadEmail">Tələbənin çıxma detallarını:</label>
+                                <textarea  class="form-control" rows="4">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi commodi earum voluptates quisquam eaque. Eaque rem quo molestias reiciendis, unde alias odio magni officiis magnam totam pariatur sed odit impedit.
+                                </textarea>
+                            </div>
+                        </div>                       
+                    </div>
+                    
+                    <button id="sa-student-left" type="button" class="btn btn-sm btn-primary">Yadda saxla</button>
+                    <button type="button" class="btn btn-sm btn-danger">Əməliyyatı ləğv et</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="left-payment-modal" class="modal fade bs-payment-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">
+                    Çıxan şəxsin ödəniş tarixçəsi
+                </h5>
+                <button type="button" class="close" data-dismiss="modal"aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive dash-social">
+                    <table id="datatable" class="table table-striped">
+                    <thead class="thead-light">
+                        <tr>
+                        <th>Ödəmə Tarixi</th>
+                        <th>Məbləğ</th>
+                        <th>Ödəmə Tipi</th>
+                        <th>Qalıq</th>
+                        <th>Geri ödəniş</th>
+                        <th>Qəbz</th>
+                        </tr>
+                        <!--end tr-->
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                        <td>18/05/2020</td>
+                        <td>250man</td>
+                        <td>Card</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>
+                            <span
+                            class="font-18 badge badge-md badge-soft-success"
+                            >Endir</span
+                            >
+                        </td>
+                        </tr>
+                        <!--end tr-->
+                        <tr>
+                        <td>18/06/2020</td>
+                        <td>450man</td>
+                        <td>Nağd</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>
+                            <span
+                            class="font-18 badge badge-md badge-soft-success"
+                            >Endir</span
+                            >
+                        </td>
+                        </tr>
+                        <!--end tr-->
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+          </div>
+</div>
+
+
+
+
+
+{% endblock modals %}

@@ -1,0 +1,75 @@
+{% extends 'payments/layout.html' %} 
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Ad</th>
+                        <th>Soyad</th>
+                        <th>Qrup</th>
+                        <th>Ödəmə tipi</th>
+                        <th>Planlanan məbləğ</th>
+                        <th>Ödənilən məbləğ</th>
+                        <th>Ödəmə tarixi</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Ülvi</td>
+                        <td>Nəcəfli</td>
+                        <td>Qrup02</td>
+                        <td>Nağd</td>
+                        <td>450AZN</td>
+                        <td>230AZN</td>
+                        <td>2011/04/25</td>
+                        <td><span class="badge badge-md badge-soft-success">Ödəyib</span></td>
+                    </tr>
+                    <tr>
+                        <td>Terlan</td>
+                        <td>Soltanov</td>
+                        <td>Qrup02</td>
+                        <td>Kart</td>
+                        <td>450AZN</td>
+                        <td>4500AZN</td>
+                        <td>2011/04/25</td>
+                        <td><span class="badge badge-md badge-soft-success">Ödəyib</span></td>
+                    </tr>
+                    <tr>
+                        <td>Rübabə</td>
+                        <td>Şabanova</td>
+                        <td>Qrup02</td>
+                        <td>Kart</td>
+                        <td>450AZN</td>
+                        <td>12AZN</td>
+                        <td>2011/04/25</td>
+                        <td><span class="badge badge-md badge-soft-danger">Gecikib</span></td>
+                    </tr>
+                    <tr>
+                        <td>Mahmud</td>
+                        <td>Qeribov</td>
+                        <td>Qrup02</td>
+                        <td>Nağd</td>
+                        <td>450AZN</td>
+                        <td>450AZN</td>
+                        <td>2011/04/25</td>
+                        <td><span class="badge badge-md badge-soft-success">Ödəyib</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %} 
+
+
+{% block modals %} 
+
+{% endblock modals %}

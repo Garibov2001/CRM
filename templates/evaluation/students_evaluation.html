@@ -1,0 +1,576 @@
+{% extends 'evaluation/layout.html' %} 
+
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <button type="button" class="btn btn-gradient-danger waves-effect waves-light float-right mb-3 mr-3" data-toggle="modal" data-animation="bounce" data-target=".global-apply">+ Yeni Qiymətləndirmə</button>
+          <h4 class="header-title mt-0 mb-3">Bütün Tələbələr</h4>
+          <div class="table-responsive dash-social">
+            <table id="evaluation" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Tələbə</th>
+                  <th>Email</th>
+                  <th>Telefon</th>
+                  <th>Status</th>
+                  <th>GitHub</th>
+                  <th>Medium</th>
+                  <th>HackerRank</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th></th>
+                  <th>Tələbə</th>
+                  <th>Email</th>
+                  <th>Telefon</th>
+                  <th>Status</th>
+                  <th>GitHub</th>
+                  <th>Medium</th>
+                  <th>HackerRank</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end col -->
+  </div>
+{% endblock content %} 
+
+{% block modals %}
+<!-- container -->
+
+
+<!--  Yeni Həftə -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-0" id="myLargeModalLabel">Yeni Həftə</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="LeadName">Ad</label>
+                <input type="text" class="form-control" id="LeadName" required="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="LeadSurname">Soyad</label>
+                <input type="email" class="form-control" id="LeadEmail" required="" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="LeadName">Ata Adı</label>
+                <input type="text" class="form-control" id="LeadName" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="LeadName">Email</label>
+                <input type="text" class="form-control" id="LeadName" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="LeadName">Telefon</label>
+                <input type="text" class="form-control" id="LeadName" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="LeadName">Şəxsiyyət vəsiqəsi</label>
+                <input type="text" class="form-control" id="LeadName" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="LeadName">Doğum Tarix</label>
+                <input type="date" class="form-control" id="LeadName" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="LeadName">Məşğulluq</label>
+                <input type="text" class="form-control" id="LeadName" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="status-select" class="mr-2">Müəllim</label>
+                <select class="custom-select" id="status-select">
+                  <option selected="">Seçin..</option>
+                  <option value="1">Samir Kərimov</option>
+                  <option value="2">Ülvi Nəcəfli</option>
+                  <option value="3">Aydan Səmədova</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="status-select" class="mr-2">Qrupu</label>
+                <select class="custom-select" id="status-select">
+                  <option selected="">Seçin..</option>
+                  <option value="1">Hİ-Səhər</option>
+                  <option value="2">Hİ-Günorta</option>
+                  <option value="3">Hİ-Axşam</option>
+                  <option value="4">Hİ-Səhər</option>
+                  <option value="5">Hİ-Axşam</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-sm btn-primary">Yadda Saxla</button>
+          <button type="button" class="btn btn-sm btn-danger">Sil</button>
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!--  Həftəlik Tapşırıqlar -->
+<div class="modal fade bs-info-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-0" id="myLargeModalLabel">Həftəlik Tapşırıqlar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="table table-responsive dash-social">
+          <table id="datatable" class="table table-striped">
+            <thead class="thead-light">
+              <tr>
+                <th>Həftə</th>
+                <th>Qiymətləndirmə</th>
+                <th>Müsbətlər</th>
+                <th>Mənfilər</th>
+              </tr>
+              <!--end tr-->
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Həftə06</td>
+                <td><span class="badge badge-md badge-soft-success">80</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Bu qədər qarışıq kod sisteminin düşünülüb yazılması xoşuma gəldi </span>
+                </td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Programın tərtib olunması səliqəlidir </span>
+                </td>
+              </tr>
+              <!--end tr-->
+              <tr>
+                <td>Həftə07</td>
+                <td><span class="badge badge-md badge-soft-success">60</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <!--end tr-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!--  Həftəlik Alqoritmlər -->
+<div class="modal fade bs-payment-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-0" id="myLargeModalLabel">Həftəlik Alqoritmlər</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="table table-responsive dash-social">
+          <table id="datatable" class="table table-striped">
+            <thead class="thead-light">
+              <tr>
+                <th>Həftə</th>
+                <th>Alqoritm Sayı</th>
+                <th>Qazanılan Bal</th>
+                <th>Hədəf</th>
+                <th>Müəllim qeydləri</th>
+              </tr>
+              <!--end tr-->
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Həftə06</td>
+                <td>2</td>
+                <td><span class="badge badge-md badge-soft-success">80</span></td>
+                <td>0</td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <!--end tr-->
+              <tr>
+                <td>Həftə07</td>
+                <td>2</td>
+                <td><span class="badge badge-md badge-soft-danger">0</span></td>
+                <td>0</td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <!--end tr-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!--  Medium Məqalələri -->
+<div class="modal fade bs-apply-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-0" id="myLargeModalLabel">Medium Məqalələri</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive dash-social">
+          <table id="datatable" class="table table-striped">
+            <thead class="thead-light">
+              <tr>
+                <th>Məqalə sayı</th>
+                <th>Tarix</th>
+                <th>Məqalə mövzusu(linki)</th>
+                <th>Qiymətləndirmə</th>
+                <th>Müəllim qeydləri</th>
+              </tr>
+              <!--end tr-->
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-success">8</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <!--end tr-->
+              <tr>
+                <td>2</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-success">8</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-success">10</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-danger">0</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-success">8</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-success">10</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-danger">3</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-danger">0</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-success">8</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-success">9</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-success">7</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>12/09/2020</td>
+                <td><a href="https://medium.com/" target="_blank">__init__ və self anlayışı</a></td>
+                <td><span class="badge badge-md badge-soft-success">10</span></td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Blablavdsldlfgf gbrthgththth fgegegergrg egrgrtgrg </span>
+                </td>
+              </tr>
+              <!--end tr-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!--  Layihə -->
+<div class="modal fade bs-badge-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-0" id="myLargeModalLabel">Layihələrin həftəlik dəyərləndirilməsi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive dash-social">
+          <table id="datatable" class="table table-striped">
+            <thead class="thead-light">
+              <tr>
+                <th>Həftə</th>
+                <th>Görülən işlər</th>
+                <th>Məllim qeydləri</th>
+              </tr>
+              <!--end tr-->
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Həftə06</td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Bu qədər qarışıq kod sisteminin düşünülüb yazılması xoşuma gəldi Bu qədər sadə kod sisteminin düşünülüb yazılması xoşuma gəldi </span>
+                </td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Bu qədər qarışıq kod sisteminin düşünülüb yazılması xoşuma gəldi </span>
+                </td>
+              </tr>
+              <!--end tr-->
+              <tr>
+                <td>Həftə07</td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Bu qədər qarışıq kod sisteminin düşünülüb yazılması xoşuma gəldi Bu qədər sadə kod sisteminin düşünülüb yazılması xoşuma gəldi </span>
+                </td>
+                <td>
+                  <span class="d-inline-block text-truncate" style="max-width: 150px">Bu qədər qarışıq kod sisteminin düşünülüb yazılması xoşuma gəldi </span>
+                </td>
+              </tr>
+              <!--end tr-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!--  Modal content for the above example -->
+<div class="modal fade global-apply" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-0" id="myLargeModalLabel">Yeni Qiymətləndirmə Əlavə et</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="status-select" class="mr-2">Tələbəni seç</label>
+                <select class="custom-select" id="status-select">
+                  <option selected="">Seç:</option>
+                  <option value="1">Mahmud Qəribov Elçin</option>
+                  <option value="1">Terlan Soltanov Laçın</option>
+                  <option value="2">Rübabe Sabanova .....</option>
+                  <option value="2">Ülvi Nəcəfli Tarix</option>
+                  <option value="2">Qədir Məmmdli Ülvi</option>
+                  <option value="2">Pərviz Abdullayev Yelpənək</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="LeadName">Tələbə (T.g)</label>
+                <input disabled type="text" class="form-control" id="LeadName" required="" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="LeadName">Email (T.g)</label>
+                <input disabled type="text" class="form-control" id="LeadName" required="" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="PhoneNo">Telefon nömrəsi (T.g)</label>
+                <input disabled type="text" class="form-control" id="PhoneNo" required="" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="LeadName">Medium Linki (T.g)</label>
+                <input disabled type="text" class="form-control" id="LeadName" required="" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="PhoneNo">GitHub Linki (T.g)</label>
+                <input disabled type="text" class="form-control" id="PhoneNo" required="" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="PhoneNo">HackerRank Linki (T.g)</label>
+                <input disabled type="text" class="form-control" id="PhoneNo" required="" />
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="status-select" class="mr-2">Qiymətləndirmə növü seç</label>
+                <select class="custom-select" id="status-select">
+                  <option selected="">Seç:</option>
+                  <option value="1">Həftəlik Tapşırıqlar</option>
+                  <option value="1">Medium Məqalələri</option>
+                  <option value="2">Həftəlik Layihə</option>
+                  <option value="2">Həftəlik HackerRank</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="LeadName">Qiymətləndirmə Balı</label>
+                <input type="text" class="form-control" id="PhoneNo" required="" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="PhoneNo">Müsbətlər</label>
+                <textarea type="text" class="form-control" id="LeadName" required="" ></textarea>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="PhoneNo">Mənfilər</label>
+                <textarea type="text" class="form-control" id="LeadName" required="" ></textarea>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-sm btn-primary">Əlavə et</button>
+          <button type="button" class="btn btn-sm btn-danger">Qiymətləndirməni ləğv et</button>
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+{% endblock modals %}

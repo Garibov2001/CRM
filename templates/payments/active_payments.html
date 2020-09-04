@@ -1,0 +1,63 @@
+{% extends 'payments/layout.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <table id="datatable" class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Ad</th>
+                        <th>Soyad</th>
+                        <th>Qrup</th>
+                        <th>Ödəmə məbləği</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Mahmud</td>
+                        <td>Qəribov</td>
+                        <td>Qrup02</td>
+                        <td>450man</td>
+                        <td><small class="badge badge-soft-warning">Bugün</small></td>
+                    </tr>
+                    <tr>
+                        <td>Rübabə</td>
+                        <td>Şabanova</td>
+                        <td>Qrup02</td>
+                        <td>450man</td>
+                        <td><small class="badge badge-soft-warning">Bugün</small></td>
+                    </tr>
+                    <tr>
+                        <td>Tərlan</td>
+                        <td>Soltanov</td>
+                        <td>Qrup02</td>
+                        <td>450man</td>
+                        <td><small class="badge badge-soft-danger">Gecikib</small></td>
+                    </tr>
+                    <tr>
+                        <td>Ülvi</td>
+                        <td>Nəcəfli</td>
+                        <td>Qrup02</td>
+                        <td>450man</td>
+                        <td><small class="badge badge-soft-warning">Bugün</small></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div>
+
+{% endblock content %}
+
+
+{% block modals %}
+
+
+
+{% endblock modals %}

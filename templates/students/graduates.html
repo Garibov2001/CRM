@@ -1,0 +1,356 @@
+{% extends 'students/layout.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <button type="button" class="btn btn-gradient-primary waves-effect waves-light float-right mb-3" data-toggle="modal" data-animation="bounce" data-target="#add-graduate-student-modal">
+                + Yeni Məzun
+                </button>
+                <h4 class="header-title mt-0 mb-3">Bütün Məzunlar</h4>
+                <div class="table-responsive dash-social">
+                    <table id="graduation_rows" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Ad</th>
+                                <th>Soyad</th>
+                                <th>Email</th>
+                                <th>Telefon</th>
+                                <th>Məzuniyyət</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th></th>
+                                <th>Ad</th>
+                                <th>Soyad</th>
+                                <th>Email</th>
+                                <th>Telefon</th>
+                                <th>Məzuniyyət</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+
+{% endblock content %}
+
+{% block modals %}
+
+<div id="add-graduate-student-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">
+                    Yeni Məzun
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                ×
+            </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">Tələbələni seç</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">Seç</option>
+                                    <option value="1">Mahmud Qəribov Elçin</option>
+                                    <option value="1">Terlan Soltanov Laçın</option>
+                                    <option value="2">Rübabe Sabanova .....</option>
+                                    <option value="2">Ülvi Nəcəfli Tarix</option>
+                                    <option value="2">Qədir Məmmdli Ülvi</option>
+                                    <option value="2">Pərviz Abdullayev Yelpənək</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Ad (T.g)</label>
+                                <input disabled type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>                      
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PhoneNo">Soyad (T.g)</label>
+                                <input disabled type="text" class="form-control" id="PhoneNo" required="">
+                            </div>
+                        </div>                         
+                    </div>   
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Email (T.g)</label>
+                                <input disabled type="text" class="form-control" id="LeadName" required="">
+                            </div>
+                        </div>                      
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PhoneNo">Telefon nömrəsi (T.g)</label>
+                                <input disabled type="text" class="form-control" id="PhoneNo" required="">
+                            </div>
+                        </div>                        
+                    </div>                      
+                    <div class="row">                        
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">İşlədiyi yer</label>
+                                <input type="text" class="form-control" id="LeadName" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Maaş</label>
+                                <input type="text" class="form-control" id="LeadName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        Qonaqlıq ayarları :)
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">Müəllim</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">Seçin..</option>
+                                    <option value="1">Samir Kərimov</option>
+                                    <option value="2">Ülvi Nəcəfli</option>
+                                    <option value="3">Rübabə Şabanova</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">İxtisaslaşma</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">Seçin..</option>
+                                    <option value="1">C# ASP.NET</option>
+                                    <option value="2">Python Django</option>
+                                    <option value="3">PHP Laravel</option>
+                                    <option value="4">JS React</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">Ali təhsil</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">Seçin..</option>
+                                    <option value="1">Var</option>
+                                    <option value="2">Oxuyur</option>
+                                    <option value="3">Yoxdur</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input border-primary" id="customFile">
+                            <label class="custom-file-label" for="customFile">Recomendation Letter</label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-primary">
+                        Əlavə et
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger">
+                        Əməliyyatı ləğv et
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div id="edit-graduate-student-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">
+                    Məzunu redaktə et
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                ×
+            </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Ad</label>
+                                <input value="Mahmud" type="text" class="form-control" id="LeadName" required="" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadSurname">Soyad</label>
+                                <input value="Qəribov" type="email" class="form-control" id="LeadEmail" required="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Telefon</label>
+                                <input value="0702568952" type="text" class="form-control" id="LeadName" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Email</label>
+                                <input value="mahmood.garibov@gmail.com" type="text" class="form-control" id="LeadName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">İşlədiyi yer</label>
+                                <input value="Pragmatech Dev and Education" type="text" class="form-control" id="LeadName" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LeadName">Maaş</label>
+                                <input value="1200AZN" type="text" class="form-control" id="LeadName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        Qonaqlıq ayarları :)
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">Müəllim</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">Samir Kərimov </option>
+                                    <option value="1">Samir Kərimov</option>
+                                    <option value="2">Ülvi Nəcəfli</option>
+                                    <option value="3">Rübabə Şabanova</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">İxtisaslaşma</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">C# ASP.NET Core</option>
+                                    <option value="1">C# ASP.NET Core</option>
+                                    <option value="2">Python Django</option>
+                                    <option value="3">PHP Laravel</option>
+                                    <option value="4">JS React</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="status-select" class="mr-2">Ali təhsil</label>
+                                <select class="custom-select" id="status-select">
+                                    <option selected="">Var</option>
+                                    <option value="1">Var</option>
+                                    <option value="2">Oxuyur</option>
+                                    <option value="3">Yoxdur</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input border-primary" id="customFile">
+                            <label class="custom-file-label" for="customFile">Recomendation Letter</label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-primary">
+                        Yadda Saxla
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger">
+                        Əməliyyatı ləğv et
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div id="graduate-payment-modal" class="modal fade bs-payment-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">
+                    Məzunun ödəniş tarixçəsi
+                </h5>
+                <button type="button" class="close" data-dismiss="modal"aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive dash-social">
+                    <table id="datatable" class="table table-striped">
+                    <thead class="thead-light">
+                        <tr>
+                        <th>Ödəmə Tarixi</th>
+                        <th>Məbləğ</th>
+                        <th>Ödəmə Tipi</th>
+                        <th>Qalıq</th>
+                        <th>Geri ödəniş</th>
+                        <th>Qəbz</th>
+                        </tr>
+                        <!--end tr-->
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                        <td>18/05/2020</td>
+                        <td>250man</td>
+                        <td>Card</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>
+                            <span
+                            class="font-18 badge badge-md badge-soft-success"
+                            >Endir</span
+                            >
+                        </td>
+                        </tr>
+                        <!--end tr-->
+                        <tr>
+                        <td>18/06/2020</td>
+                        <td>450man</td>
+                        <td>Nağd</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>
+                            <span
+                            class="font-18 badge badge-md badge-soft-success"
+                            >Endir</span
+                            >
+                        </td>
+                        </tr>
+                        <!--end tr-->
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+          </div>
+</div>
+
+
+{% endblock modals %}

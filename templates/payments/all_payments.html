@@ -1,0 +1,162 @@
+{% extends 'payments/layout.html' %} 
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                
+
+                <div class="col-sm-12 form-group d-flex">
+                    <input class="form-control mr-3" type="date" value="2011-08-19" id="example-date-input">
+                    <input class="form-control mr-3" type="date" value="2011-08-19" id="example-date-input">
+                     <button type="button" class="btn form-control btn-gradient-warning mr-3 waves-effect waves-light float-right mb-3">
+                     Axtar
+                    </button>
+                    <button type="button" class="btn btn-gradient-primary form-control mr-3 waves-effect waves-light float-right mb-3" data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-lg">
+                    + Əlavə Et
+                </button>
+                </div>
+                <div class="table-responsive dash-social">
+                    <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <thead>
+                                               <tr>
+                                                    <th>Ad</th>
+                                                    <th>Soyad</th>
+                                                    <th>Qrup</th>
+                                                    <th>Ödəmə tipi</th>
+                                                    <th>Planlanan məbləğ</th>
+                                                    <th>Ödənilən məbləğ</th>
+                                                    <th>Ödəmə tarixi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Ülvi</td>
+                                                    <td>Nəcəfli</td>
+                                                    <td>Qrup02</td>
+                                                    <td>Nağd</td>
+                                                    <td>450AZN</td>
+                                                    <td>230AZN</td>
+                                                    <td>2011/04/25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Terlan</td>
+                                                    <td>Soltanov</td>
+                                                    <td>Qrup02</td>
+                                                    <td>Kart</td>
+                                                    <td>450AZN</td>
+                                                    <td>4500AZN</td>
+                                                    <td>2011/04/25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Rübabə</td>
+                                                    <td>Şabanova</td>
+                                                    <td>Qrup02</td>
+                                                    <td>Kart</td>
+                                                    <td>450AZN</td>
+                                                    <td>12AZN</td>
+                                                    <td>2011/04/25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mahmud</td>
+                                                    <td>Qeribov</td>
+                                                    <td>Qrup02</td>
+                                                    <td>Nağd</td>
+                                                    <td>450AZN</td>
+                                                    <td>450AZN</td>
+                                                    <td>2011/04/25</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end card-body-->
+    </div>
+    <!--end card-->
+</div>
+{% endblock content %} 
+
+
+{% block modals %} 
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Yeni ödəmə əlavə et</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Name">Ad</label>
+                                <input type="text" class="form-control" id="Name" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Surname">Soyad</label>
+                                <input type="text" class="form-control" id="Surname" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Group">Qrup</label>
+                                <input type="text" class="form-control" id="Group" required="">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PPayment">Planlanan Ödəmə</label>
+                                <input type="text" class="form-control" id="PPayment" required="">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="FPayment">Faktiki Ödəmə</label>
+                                <input type="text" class="form-control" id="FPayment" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PaymentType">Ödəmə Tipi</label>
+                                 <select class="custom-select" id="status-select">
+                                    <option selected="">Seç</option>
+                                    <option value="1">Nağd</option>
+                                    <option value="2">Kart</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-primary">Yadda Saxla</button>
+                    <button type="button" class="btn btn-sm btn-danger">Ləğv et</button>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+{% endblock modals %}
